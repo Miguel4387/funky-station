@@ -213,7 +213,6 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 		SubscribeLocalEvent<BloodCultistComponent, SacrificeRuneEvent>(TrySacrificeVictim);
 		SubscribeLocalEvent<BloodCultistComponent, ConvertRuneEvent>(TryConvertVictim);
 
-        SubscribeLocalEvent<BloodCultistComponent, ComponentAdd>(OnCultistAdded);
 		SubscribeLocalEvent<BloodCultistComponent, MindAddedMessage>(OnMindAdded);
 		SubscribeLocalEvent<BloodCultistComponent, MindRemovedMessage>(OnMindRemoved);
 		SubscribeLocalEvent<BloodCultistComponent, ComponentRemove>(OnCultistRemoved);
@@ -227,11 +226,6 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 		// Register admin commands
 		InitializeCommands();
 	}
-
-    private void OnCultistAdded(Entity<BloodCultistComponent> ent, ref ComponentAdd args)
-    {
-        throw new NotImplementedException();
-    }
 
     private void InitializeCommands()
 	{

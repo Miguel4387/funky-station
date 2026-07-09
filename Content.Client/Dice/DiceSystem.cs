@@ -16,15 +16,19 @@ public sealed partial class DiceSystem : SharedDiceSystem
 
     private void OnDiceAfterHandleState(Entity<DiceComponent> entity, ref AfterAutoHandleStateEvent args)
     {
-        if (!TryComp<SpriteComponent>(entity, out var sprite))
-            return;
+        if (!entity.Comp.IsCoin)
+        {
 
-        // TODO maybe just move each die to its own RSI?
-        var state = _sprite.LayerGetRsiState((entity.Owner, sprite), 0).Name;
-        if (state == null)
-            return;
+            if (!TryComp<SpriteComponent>(entity, out var sprite))
+                return;
 
-        var prefix = state.Substring(0, state.IndexOf('_'));
-        _sprite.LayerSetRsiState((entity.Owner, sprite), 0, $"{prefix}_{entity.Comp.CurrentValue}");
+            // TODO maybe just move each die to its own RSI?
+            var state = _sprite.LayerGetRsiState((entity.Owner, sprite), 0).Name;
+            if (state == null)
+                return;
+
+            var prefix = state.Substring(0, state.IndexOf('_'));
+            _sprite.LayerSetRsiState((entity.Owner, sprite), 0, $"{prefix}_{entity.Comp.CurrentValue}");
+        }
     }
 }

@@ -145,6 +145,10 @@
   name: coin
   description: A flat bit of metal. If it was still in circulation, inflation would've made it worthless. Since it isn't, it's worth enough to keep in a book.
   components:
+  - type: Dice
+    sides: 2
+    IsCoin: true
+  - type: UseDelay
   - type: Sprite
     sprite: Objects/Misc/coins.rsi
     state: coin_iron

@@ -30,7 +30,7 @@ public sealed partial class DiceComponent : Component
     ///     If the item is a coin, for coin flips
     /// </summary>
     [DataField]
-    public bool IsCoin { get; private set; } = false;
+    public bool isCoin { get; private set; } = false;
 
     /// <summary>
     ///     The currently displayed value.

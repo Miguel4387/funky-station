@@ -152,6 +152,9 @@
     isCoin: true
     sound: !type:SoundCollectionSpecifier
       collection: Coin
+  - type: Tag
+    tags:
+    - Dice
   - type: UseDelay
   - type: Sprite
     sprite: Objects/Misc/coins.rsi

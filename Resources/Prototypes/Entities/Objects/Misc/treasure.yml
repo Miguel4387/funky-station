@@ -150,6 +150,8 @@
     sides: 2
     currentValue: 1
     isCoin: true
+    sound: !type:SoundCollectionSpecifier
+      collection: Coin
   - type: UseDelay
   - type: Sprite
     sprite: Objects/Misc/coins.rsi

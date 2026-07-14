@@ -13,7 +13,7 @@
   id: StartingGearDecapoidVaporizer
   equipment:
     mask: DecapoidBreathingApparatus
-    suitstorage: DecapoidVaporTankFilled
+    tankstorage: DecapoidVaporTankFilled
 
 # vaporizer
 - type: loadoutGroup

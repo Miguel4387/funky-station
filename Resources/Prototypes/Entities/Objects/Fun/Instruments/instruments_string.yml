@@ -16,7 +16,7 @@
     quickEquip: false
     slots:
     - back
-    - suitStorage
+    - backstorage
 
 - type: entity
   parent: BaseStringInstrumentClothing

@@ -76,14 +76,27 @@
     dependsOn: jumpsuit
     displayName: Pocket 2
     stripHidden: true
-  - name: suitstorage
-    slotTexture: suit_storage
-    slotFlags:   SUITSTORAGE
+  - name: backstorage
+    slotTexture: back_storage
+    slotFlags:   BACKSTORAGE
     slotGroup: MainHotbar
     stripTime: 3
     uiWindowPos: 2,0
-    strippingWindowPos: 2,5 #they dont need suit storage clothing to use this slot
-    displayName: Suit Storage
+    strippingWindowPos: 0,5 #they dont need back storage clothing to use this slot
+    displayName: Back Storage
+    dependsOnComponents:
+    - type: AllowBackStorage
+  - name: tankstorage
+    slotTexture: tank_storage
+    slotFlags:   TANKSTORAGE
+    slotGroup: MainHotbar
+    stripTime: 3
+    uiWindowPos: 3,0
+    strippingWindowPos: 1, 5
+    dependsOn: outerClothing
+    dependsOnComponents:
+    - type: AllowTankStorage
+    displayName: Tank Storage
   - name: id
     slotTexture: id
     fullTextureName: template_small

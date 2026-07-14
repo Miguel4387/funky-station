@@ -159,7 +159,7 @@
     sprite: Objects/Tanks/Jetpacks/captain.rsi
     slots:
       - Back
-      - SuitStorage
+      - tankStorage
   - type: Item
     sprite: Objects/Tanks/Jetpacks/captain.rsi
     size: Normal
@@ -202,7 +202,7 @@
       sprite: Objects/Tanks/Jetpacks/mini.rsi
       slots:
         - Back
-        - suitStorage
+        - tankStorage
         - Belt
     - type: GasTank
       overpressure: 1519.875 # Poorly manufactured, they also lose pressure quickly so this makes exploding them easier, at the cost of the explosion being tiny.
@@ -274,7 +274,7 @@
     sprite: Objects/Tanks/Jetpacks/void.rsi
     slots:
       - Back
-      - suitStorage
+      - tankStorage
       - Belt
 
 # Filled void

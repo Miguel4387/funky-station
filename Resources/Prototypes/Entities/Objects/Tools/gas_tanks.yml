@@ -24,7 +24,7 @@
     sprite: Objects/Tanks/generic.rsi
     slots:
     - Back
-    - suitStorage
+    - tankStorage
   - type: UseDelay
     delays:
       gasTank:
@@ -122,7 +122,7 @@
     slots:
     - Pocket
     - Belt
-    - suitStorage
+    - tankStorage
   - type: MeleeWeapon
     damage:
       types:
@@ -281,4 +281,4 @@
     sprite: Objects/Tanks/plasma.rsi
     slots:
     - Belt
-    - suitStorage
+    - tankStorage

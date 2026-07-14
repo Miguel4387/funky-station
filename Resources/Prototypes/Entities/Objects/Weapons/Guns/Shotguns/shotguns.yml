@@ -18,7 +18,7 @@
     quickEquip: false
     slots:
     - Back
-    - suitStorage
+    - backStorage
   - type: AmmoCounter
   - type: Gun
     fireRate: 2
@@ -65,7 +65,7 @@
     quickEquip: false
     slots:
     - Back
-    - suitStorage
+    - backStorage
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun

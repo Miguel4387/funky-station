@@ -56,7 +56,7 @@
     quickEquip: false
     slots:
     - back
-    - suitStorage
+    - backStorage
   - type: Construction
     graph: Spear
     node: spear

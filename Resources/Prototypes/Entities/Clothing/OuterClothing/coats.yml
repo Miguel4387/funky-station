@@ -10,7 +10,7 @@
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
 
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSecurityContraband ]
+  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, AllowBackStorageClothing, BaseSecurityContraband ]
   id: ClothingOuterCoatDetective
   name: detective's armored trenchcoat
   description: An 20th-century trenchcoat with an armored underlay. Someone who wears this means serious business.
@@ -62,7 +62,7 @@
 
 - type: entity
   abstract: true
-  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase ]
+  parent: [ ClothingOuterArmorBase, AllowBackStorageClothing, ClothingOuterStorageBase ]
   id: ClothingOuterArmorHoS
   components:
   - type: Armor
@@ -76,7 +76,7 @@
 
 - type: entity
   abstract: true
-  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase ]
+  parent: [ ClothingOuterArmorBase,AllowBackStorageClothing, ClothingOuterStorageBase ]
   id: ClothingOuterArmorWarden
   components:
   - type: Armor

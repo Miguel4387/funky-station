@@ -156,7 +156,7 @@
     sprite: _MACRO/Objects/Tanks/vapor.rsi
     slots:
     - Back
-    - suitStorage
+    - tankStorage
   - type: UserInterface
     interfaces:
       enum.SharedGasTankUiKey.Key:

@@ -28,7 +28,7 @@
       - MetalHydrogenArmor
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  parent: [ClothingOuterBaseLarge, AllowBackStorageClothing, AllowTankStorageClothing]
   id: ClothingOuterArmorAtmosian
   name: atmosian armor
   description: An atmos fire suit bolstered with metal hydrogen.

@@ -13,7 +13,7 @@
   - !type:GroupLoadoutEffect
     proto: Aquatic
   equipment:
-    suitstorage: DecapoidVaporTankFilled
+    tankstorage: DecapoidVaporTankFilled
 
 # Breath Tool On Face
 - type: loadout

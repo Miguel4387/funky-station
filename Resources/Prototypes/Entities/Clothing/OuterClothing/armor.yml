@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ ClothingOuterBaseMedium, AllowSuitStorageClothing ]
+  parent: [ ClothingOuterBaseMedium, AllowBackStorageClothing ]
   id: ClothingOuterArmorBase
   name: armor vest
   description: A standard Type I armored vest that provides decent protection against most types of damage.
@@ -105,7 +105,7 @@
     sprite: Clothing/OuterClothing/Vests/detvest.rsi
 
 - type: entity
-  parent: [ ClothingOuterBaseMedium, AllowSuitStorageClothing ]
+  parent: [ ClothingOuterBaseMedium, AllowBackStorageClothing ]
   id: ClothingOuterArmorBaseCarapace
   abstract: true
   components:
@@ -120,7 +120,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ClothingOuterArmorBaseCarapace, BaseCommandContraband]
+  parent: [ClothingOuterArmorBaseCarapace, AllowBackStorageClothing, BaseCommandContraband]
   id: ClothingOuterArmorCaptainCarapace
   name: captain's carapace
   description: An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
@@ -146,7 +146,7 @@
 
 #Web vest
 - type: entity
-  parent: [ClothingOuterArmorBase, ClothingOuterStorageBase, BaseSyndicateContraband]
+  parent: [ClothingOuterArmorBase, AllowBackStorageClothing, ClothingOuterStorageBase, BaseSyndicateContraband]
   id: ClothingOuterVestWeb
   name: web vest
   description: A synthetic armor vest. This one has added webbing and ballistic plates.
@@ -167,7 +167,7 @@
 
 #Elite web vest
 - type: entity
-  parent: [ClothingOuterArmorBase, ClothingOuterStorageBase, BaseSyndicateContraband]
+  parent: [ClothingOuterArmorBase, AllowBackStorageClothing, ClothingOuterStorageBase, BaseSyndicateContraband]
   id: ClothingOuterVestWebElite
   name: elite web vest
   description: A synthetic armor vest. This one has added webbing and heat resistant fibers.
@@ -195,7 +195,7 @@
 
 #Mercenary web vest
 - type: entity
-  parent: [ BaseMajorContraband, ClothingOuterVestWeb] #web vest so it should have some pockets for ammo
+  parent: [ BaseMajorContraband, AllowBackStorageClothing, ClothingOuterVestWeb] #web vest so it should have some pockets for ammo
   id: ClothingOuterVestWebMerc
   name: mercenary web vest
   description: A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
@@ -215,7 +215,7 @@
 
 # Armor covering multiple body parts including limbs
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSyndicateContraband ]
+  parent: [ClothingOuterBaseLarge, AllowBackStorageClothing, BaseSyndicateContraband ]
   id: ClothingOuterArmorRaid
   name: syndicate raid suit
   description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect its wearer from space.
@@ -292,7 +292,7 @@
     size: Normal
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband]
+  parent: [ClothingOuterBaseLarge, AllowBackStorageClothing, BaseSecurityContraband]
   id: ClothingOuterArmorRiot
   name: riot suit
   description: A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Perfect for fighting delinquents around the station.
@@ -314,7 +314,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowBackStorageClothing ]
   id: ClothingOuterArmorCult
   name: acolyte armor
   description: An evil-looking piece of cult armor, made of bones.
@@ -333,7 +333,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  parent: [ClothingOuterBaseLarge, AllowBackStorageClothing]
   id: ClothingOuterArmorHeavy
   name: heavy armor suit
   description: A heavily armored suit that protects against excessive damage.
@@ -400,7 +400,7 @@
     sprite: Clothing/OuterClothing/Armor/magusred.rsi
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowBackStorageClothing, AllowTankStorageClothing ]
   id: ClothingOuterArmorChangeling
   name: chitinous armor
   description: Inflates the changeling's body into an all-consuming chitinous mass of armor.
@@ -428,7 +428,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowBackStorageClothing  ]
   id: ClothingOuterArmorBone
   name: bone armor
   description: Sits on you like a second skin.
@@ -457,7 +457,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowBackStorageClothing  ]
   id: ClothingOuterArmorPodWars
   name: ironclad II armor
   description: A repurposed suit of ironclad II armor, a relic of the pod wars.

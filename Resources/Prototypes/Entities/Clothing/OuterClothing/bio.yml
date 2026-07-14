@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothingGasTanks]
+  parent: [ClothingOuterBaseLarge, AllowTankStorageClothing]
   id: ClothingOuterBioGeneral
   name: bio suit
   suffix: Generic
@@ -64,7 +64,7 @@
     sprite: Clothing/OuterClothing/Bio/scientist.rsi
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband]
+  parent: [ClothingOuterBaseLarge, AllowTankStorageClothing, AllowBackStorageClothing, BaseSecurityContraband]
   id: ClothingOuterBioSecurity
   name: bio suit
   suffix: Security

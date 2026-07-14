@@ -43,7 +43,7 @@
     sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
     slots:
     - Back
-    - suitStorage
+    - backStorage
   - type: Item
     size: Huge
     shape:
@@ -76,7 +76,7 @@
     sprite: Objects/Weapons/Guns/Launchers/hydra_launcher.rsi
     slots:
     - Back
-    - suitStorage
+    - backStorage
   - type: Item
     size: Huge
   - type: AmmoCounter

@@ -291,7 +291,7 @@
     sprite: Objects/Fun/card_sword.rsi
     slots:
     - Back
-    - SuitStorage
+    - backStorage
   - type: Appearance
   - type: MeleeWeapon
     wideAnimationRotation: -135

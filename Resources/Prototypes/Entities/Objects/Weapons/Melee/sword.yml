@@ -189,7 +189,7 @@
     sprite: Objects/Weapons/Melee/claymore.rsi
     slots:
     - Back
-    - SuitStorage #Bigger than the other swords, easier to strap to your suit.
+    - backStorage #Bigger than the other swords, easier to strap to your suit.
   - type: DisarmMalus
 
 #Other/Weird

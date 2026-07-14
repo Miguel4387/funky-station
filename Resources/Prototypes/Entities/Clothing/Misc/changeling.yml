@@ -249,7 +249,7 @@
 
 - type: entity
   parent: ChangelingFleshClothingBase
-  id: ChangelingFleshClothingSuitStorage
+  id: ChangelingFleshClothingTankStorage
   name: changeling flesh gas tank
   components:
   - type: Sprite
@@ -261,9 +261,9 @@
     quickEquip: false
     sprite: Objects/Tanks/generic.rsi
     slots:
-    - suitStorage
+    - tankStorage
   - type: ChameleonClothing
-    default: ChangelingFleshClothingSuitStorage
+    default: ChangelingFleshClothingTankStorage
     slot:
-    - suitStorage
+    - tankStorage
   # not functional, it's just a visual replacement for stealth purposes

@@ -11,7 +11,7 @@
     quickEquip: false
     slots:
     - Back
-    - suitStorage
+    - backStorage
   - type: AmmoCounter
   - type: Gun
     fireRate: 2
@@ -118,7 +118,7 @@
     quickEquip: false
     slots:
     - Belt
-    - suitStorage
+    - backStorage
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -554,7 +554,7 @@
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
     quickEquip: false
     slots:
-      - suitStorage
+      - backStorage
       - Belt
   - type: BatteryAmmoProvider
     proto: BulletDisabler

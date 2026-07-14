@@ -164,7 +164,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterBase, GeigerCounterClothing, AllowSuitStorageClothing]
+  parent: [ClothingOuterBase, GeigerCounterClothing, AllowTankStorageClothing]
   id: ClothingOuterHardsuitBase
   name: base hardsuit
   components:
@@ -216,7 +216,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterBase, AllowSuitStorageClothing]
+  parent: [ClothingOuterBase, AllowTankStorageClothing ]
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:

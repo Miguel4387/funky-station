@@ -65,7 +65,7 @@ public sealed class AutoInternalsTests : GameTest
   id: InternalsDummyGear
   equipment:
     mask: ClothingMaskBreath
-    suitstorage: OxygenTankFilled
+    tankstorage: OxygenTankFilled
 
 - type: job
   id: TestInternalsDummy

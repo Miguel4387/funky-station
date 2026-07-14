@@ -10,13 +10,13 @@
     whitelist:
       tags:
       - PetWearable
-  - name: suitstorage
-    slotTexture: suit_storage
-    slotFlags: SUITSTORAGE
+  - name: tankstorage
+    slotTexture: tank_storage
+    slotFlags: TANKSTORAGE
     stripTime: 3
     uiWindowPos: 0,1
     strippingWindowPos: 2,5
-    displayName: Suit Storage
+    displayName: Tank Storage
     whitelist:
       components:
       - GasTank
@@ -33,13 +33,13 @@
     whitelist:
       tags:
       - PetWearable
-  - name: suitstorage
-    slotTexture: suit_storage
-    slotFlags: SUITSTORAGE
+  - name: tankstorage
+    slotTexture: tank_storage
+    slotFlags: TANKSTORAGE
     stripTime: 3
     uiWindowPos: 0,1
     strippingWindowPos: 2,5
-    displayName: Suit Storage
+    displayName: Tank Storage
     whitelist:
       components:
       - GasTank

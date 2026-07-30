@@ -9,6 +9,10 @@ using Content.Shared.Security;
 using Content.Shared.StationRecords;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+//<funkystation>
+using Content.Server.Radio.EntitySystems;
+using Content.Shared.Radio;
+//</funkystation>
 
 namespace Content.Server.CriminalRecords.Systems;
 
@@ -20,14 +24,15 @@ public sealed partial class CriminalRecordsHackerSystem : SharedCriminalRecordsH
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private StationRecordsSystem _records = default!;
+    [Dependency] private RadioSystem _radio = default!; //funkystation
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CriminalRecordsHackerComponent, CriminalRecordsHackDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<CriminalRecordsHackerComponent, CriminalRecordHackStartEvent>(OnHackStart); //funkystation
     }
-
     private void OnDoAfter(Entity<CriminalRecordsHackerComponent> ent, ref CriminalRecordsHackDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target == null)
@@ -54,7 +59,14 @@ public sealed partial class CriminalRecordsHackerSystem : SharedCriminalRecordsH
         var ev = new CriminalRecordsHackedEvent(ent, args.Target.Value);
         RaiseLocalEvent(args.User, ref ev);
     }
+    //funky station, warns sec when ninja begins hack
+    private void OnHackStart(Entity<CriminalRecordsHackerComponent> ent, ref CriminalRecordHackStartEvent args)
+    {
+        var message = Loc.GetString("ninja-hack-wanted-warning");
+        _radio.SendRadioMessage(args.Target, message, _proto.Index<RadioChannelPrototype>(ent.Comp.SecurityChannel), args.Target, true, "Communications Console");
+    }
 }
+
 
 /// <summary>
 /// Raised on the user after hacking a criminal records console.

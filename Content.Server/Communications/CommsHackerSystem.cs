@@ -9,6 +9,10 @@ using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+//<funky change>
+using Content.Server.Radio.EntitySystems;
+using Content.Shared.Radio;
+//</funky change>
 
 namespace Content.Server.Communications;
 
@@ -21,6 +25,7 @@ public sealed partial class CommsHackerSystem : SharedCommsHackerSystem
     // TODO: remove when generic check event is used
     [Dependency] private NinjaGlovesSystem _gloves = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private RadioSystem _radio = default!; //funky change
 
     public override void Initialize()
     {
@@ -49,6 +54,9 @@ public sealed partial class CommsHackerSystem : SharedCommsHackerSystem
             MovementThreshold = 0.5f,
             CancelDuplicate = false
         };
+        // funky change, warns security when ninja attempts to hack comms console
+        var message = Loc.GetString("ninja-hack-comms-warning");
+        _radio.SendRadioMessage(args.Target, message, _proto.Index<RadioChannelPrototype>(comp.SecurityChannel), args.Target, true, "Communications Console");
 
         _doAfter.TryStartDoAfter(doAfterArgs);
         args.Handled = true;

@@ -2,6 +2,10 @@ using Content.Shared.CriminalRecords.Systems;
 using Content.Shared.Dataset;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+///<funky change>
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Shared.Radio;
+//</funky change>
 
 namespace Content.Shared.CriminalRecords.Components;
 
@@ -28,4 +32,11 @@ public sealed partial class CriminalRecordsHackerComponent : Component
     /// </summary>
     [DataField]
     public LocId Announcement = "ninja-criminal-records-hack-announcement";
+
+    /// <summary>
+    /// The radio channel for security
+    /// </summary>
+    /// funky change for Ninja warning
+    [DataField("securityChannel", customTypeSerializer: typeof(PrototypeIdSerializer<RadioChannelPrototype>))]
+    public string SecurityChannel = "Security";
 }

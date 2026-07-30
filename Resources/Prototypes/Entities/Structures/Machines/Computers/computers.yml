@@ -396,6 +396,9 @@
   - type: GuideHelp
     guides:
     - CriminalRecords
+  - type: ActiveRadio #Funky change for Ninja warning
+    channels:
+    - Security
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -683,6 +686,9 @@
     damageModifierSet: StructuralMetallicStrong
   - type: Injurable
     damageContainer: StructuralInorganic
+  - type: ActiveRadio #Funky change for Ninja warning
+    channels:
+    - Security
 
 - type: entity
   parent: ComputerComms

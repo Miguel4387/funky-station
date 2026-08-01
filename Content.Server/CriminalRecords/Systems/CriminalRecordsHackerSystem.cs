@@ -10,6 +10,7 @@ using Content.Shared.StationRecords;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 //<funkystation>
+using Robust.Shared.Timing;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Radio;
 //</funkystation>
@@ -25,6 +26,7 @@ public sealed partial class CriminalRecordsHackerSystem : SharedCriminalRecordsH
     [Dependency] private StationSystem _station = default!;
     [Dependency] private StationRecordsSystem _records = default!;
     [Dependency] private RadioSystem _radio = default!; //funkystation
+    [Dependency] private IGameTiming _timing = default!; //funkystation
 
     public override void Initialize()
     {
@@ -62,8 +64,12 @@ public sealed partial class CriminalRecordsHackerSystem : SharedCriminalRecordsH
     //funky station, warns sec when ninja begins hack
     private void OnHackStart(Entity<CriminalRecordsHackerComponent> ent, ref CriminalRecordHackStartEvent args)
     {
-        var message = Loc.GetString("ninja-hack-wanted-warning");
-        _radio.SendRadioMessage(args.Target, message, _proto.Index<RadioChannelPrototype>(ent.Comp.SecurityChannel), args.Target, true, "Communications Console");
+        if (_timing.CurTime >= ent.Comp.NextWarningTime) // prevents spam
+        {
+            var message = Loc.GetString("ninja-hack-wanted-warning");
+            _radio.SendRadioMessage(args.Target, message, _proto.Index<RadioChannelPrototype>(ent.Comp.SecurityChannel), args.Target, true, "Communications Console");
+            ent.Comp.NextWarningTime = _timing.CurTime + ent.Comp.WarningCooldown;
+        }
     }
 }
 

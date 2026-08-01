@@ -38,5 +38,19 @@ public sealed partial class CriminalRecordsHackerComponent : Component
     /// </summary>
     /// funky change for Ninja warning
     [DataField("securityChannel", customTypeSerializer: typeof(PrototypeIdSerializer<RadioChannelPrototype>))]
+
     public string SecurityChannel = "Security";
+    /// <summary>
+    /// Minimum time between sending the security warning radio message for a ninja hacking attempt
+    /// </summary>
+    /// funky, prevents spamming security with messages
+    [DataField]
+    public TimeSpan WarningCooldown = TimeSpan.FromSeconds(10);
+
+    /// <summary>
+    /// The next time the warning radio message may be sent
+    /// </summary>
+    /// funky
+    [DataField]
+    public TimeSpan NextWarningTime = TimeSpan.Zero;
 }

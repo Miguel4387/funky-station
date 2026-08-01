@@ -10,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 //<funky change>
+using Robust.Shared.Timing;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Radio;
 //</funky change>
@@ -22,6 +23,7 @@ public sealed partial class CommsHackerSystem : SharedCommsHackerSystem
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IGameTiming _timing = default!; // funky
     // TODO: remove when generic check event is used
     [Dependency] private NinjaGlovesSystem _gloves = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
@@ -55,8 +57,12 @@ public sealed partial class CommsHackerSystem : SharedCommsHackerSystem
             CancelDuplicate = false
         };
         // funky change, warns security when ninja attempts to hack comms console
-        var message = Loc.GetString("ninja-hack-comms-warning");
-        _radio.SendRadioMessage(args.Target, message, _proto.Index<RadioChannelPrototype>(comp.SecurityChannel), args.Target, true, "Communications Console");
+        if (_timing.CurTime >= comp.NextWarningTime) // prevents spam
+        {
+            var message = Loc.GetString("ninja-hack-comms-warning");
+            _radio.SendRadioMessage(args.Target, message, _proto.Index<RadioChannelPrototype>(comp.SecurityChannel), args.Target, true, "Communications Console");
+            comp.NextWarningTime = _timing.CurTime + comp.WarningCooldown;
+        }
 
         _doAfter.TryStartDoAfter(doAfterArgs);
         args.Handled = true;

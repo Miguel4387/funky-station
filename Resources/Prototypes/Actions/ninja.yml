@@ -12,10 +12,10 @@
   parent: BaseAction
   id: ActionCreateThrowingStar
   name: Create throwing star
-  description: Channels suit power into creating a throwing star that deals extra stamina damage.
+  description: Channels suit power into creating a throwing star laced with a sleeping agent. #funky change
   components:
   - type: Action
-    useDelay: 12 # funky change from 0.5
+    useDelay: 9 # funky change from 0.5
     icon:
       sprite: Objects/Weapons/Throwable/throwing_star.rsi
       state: icon
@@ -39,6 +39,19 @@
     priority: -11
   - type: InstantAction
     event: !type:RecallKatanaEvent {}
+
+- type: entity # funky
+  parent: ActionRecallKatana
+  id: ActionRecallSpiderCharge
+  name: Recover Spider Charge
+  description: Teleports the Spider Charge linked to this suit to its wearer in case its lost, cost based on distance.
+  components:
+  - type: Action
+    icon:
+      sprite: Objects/Weapons/Bombs/spidercharge.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:RecallSpiderChargeEvent {}
 
 - type: entity
   parent: BaseAction

@@ -8,6 +8,7 @@ namespace Content.Shared.Ninja.Components;
 /// Only this component detonating can trigger the ninja's objective.
 /// </summary>
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSpiderChargeSystem))]
+[AutoGenerateComponentState]
 public sealed partial class SpiderChargeComponent : Component
 {
     /// <summary>
@@ -27,4 +28,10 @@ public sealed partial class SpiderChargeComponent : Component
     /// </summary>
     [DataField]
     public string TriggerKey = "timer";
+
+    /// <summary>
+    /// If the charge is armed or not, used to prevent recalling an armed charge
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Armed = false;
 }

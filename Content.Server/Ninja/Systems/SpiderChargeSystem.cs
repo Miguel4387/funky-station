@@ -77,6 +77,7 @@ public sealed partial class SpiderChargeSystem : SharedSpiderChargeSystem
     private void OnStuck(EntityUid uid, SpiderChargeComponent comp, ref EntityStuckEvent args)
     {
         comp.Planter = args.User;
+        comp.Armed = true; // funky
     }
 
     //funky
@@ -86,6 +87,7 @@ public sealed partial class SpiderChargeSystem : SharedSpiderChargeSystem
     private void OnUnstuck(EntityUid uid, SpiderChargeComponent comp, ref EntityUnstuckEvent args)
     {
         comp.Planter = null;            //stops greentext
+        comp.Armed = false;             //marks the bomb as unarmed
         _trigger.StopTimerTrigger(uid); //stops timer
 
     }

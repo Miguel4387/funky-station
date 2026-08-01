@@ -23,11 +23,11 @@ public sealed partial class CommsHackerSystem : SharedCommsHackerSystem
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IGameTiming _timing = default!; // funky
     // TODO: remove when generic check event is used
     [Dependency] private NinjaGlovesSystem _gloves = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private RadioSystem _radio = default!; //funky change
+    [Dependency] private RadioSystem _radio = default!; //funky
+    [Dependency] private IGameTiming _timing = default!; // funky
 
     public override void Initialize()
     {

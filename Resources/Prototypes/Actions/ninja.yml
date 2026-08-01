@@ -15,7 +15,7 @@
   description: Channels suit power into creating a throwing star that deals extra stamina damage.
   components:
   - type: Action
-    useDelay: 0.5
+    useDelay: 12 # funky change from 0.5
     icon:
       sprite: Objects/Weapons/Throwable/throwing_star.rsi
       state: icon

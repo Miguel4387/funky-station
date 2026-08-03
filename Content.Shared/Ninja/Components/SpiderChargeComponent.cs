@@ -15,7 +15,7 @@ public sealed partial class SpiderChargeComponent : Component
     /// Range for planting within the target area.
     /// </summary>
     [DataField]
-    public float Range = 10f;
+    public float Range = 13f; // funky change from 10f
 
     /// <summary>
     /// The ninja that planted this charge.
@@ -29,6 +29,7 @@ public sealed partial class SpiderChargeComponent : Component
     [DataField]
     public string TriggerKey = "timer";
 
+    // funky
     /// <summary>
     /// If the charge is armed or not, used to prevent recalling an armed charge
     /// </summary>

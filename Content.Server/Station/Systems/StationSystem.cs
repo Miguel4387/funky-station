@@ -283,6 +283,47 @@ public sealed partial class StationSystem : SharedStationSystem
         return filter;
     }
 
+    // funky
+    /// <summary>
+    /// Retrieves the distance of an entity from the nearest station grid.
+    /// </summary>
+    public float GetDistanceFromStation(EntityUid user)
+    {
+        var userXform = Transform(user);
+        var userPosition = _transform.GetWorldPosition(userXform);
+        var userMap = userXform.MapID;
+        var result = 0f;
+
+        foreach (var stationUid in GetStations())
+        {
+            if (!TryComp<StationDataComponent>(stationUid, out var stationData))
+                continue;
+
+            foreach (var gridUid in stationData.Grids)
+            {
+                if (!TryComp<MapGridComponent>(gridUid, out var grid))
+                    continue;
+
+                var gridXform = Transform(gridUid);
+                if (gridXform.MapID != userMap)
+                    continue;
+
+                var worldBounds = _transform.GetWorldMatrix(gridXform).TransformBox(grid.LocalAABB);
+
+                if (worldBounds.Contains(userPosition))
+                    return result;
+
+                var nearestX = Math.Clamp(userPosition.X, worldBounds.Left, worldBounds.Right);
+                var nearestY = Math.Clamp(userPosition.Y, worldBounds.Bottom, worldBounds.Top);
+                var dx = userPosition.X - nearestX;
+                var dy = userPosition.Y - nearestY;
+
+                result = MathF.Sqrt(dx * dx + dy * dy);
+            }
+        }
+        return result;
+    }
+
     /// <summary>
     /// Initializes a new station with the given information.
     /// </summary>

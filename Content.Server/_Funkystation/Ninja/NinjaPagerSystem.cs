@@ -59,7 +59,7 @@ public sealed partial class NinjaPagerSystem : SharedNinjaPagerSystem
             }
         }
 
-        if (!IsNinjaFarEnoughFromStation(user, MinimumStationDistance))
+        if (_station.GetDistanceFromStation(user) < MinimumStationDistance)
         {
             _popup.PopupEntity(Loc.GetString("ninja-pager-too-close"), user, user);
             args.Handled = true;
@@ -72,46 +72,5 @@ public sealed partial class NinjaPagerSystem : SharedNinjaPagerSystem
             _ninja.PagerUsed((user, ninja));
         QueueDel(user);
         args.Handled = true;
-    }
-
-    /// <summary>
-    /// Checks if the ninja is far enough to extract.
-    /// </summary>
-    private bool IsNinjaFarEnoughFromStation(EntityUid user, float minimumDistance)
-    {
-        var userXform = Transform(user);
-        var userPosition = _transform.GetWorldPosition(userXform);
-        var userMap = userXform.MapID;
-
-        foreach (var stationUid in _station.GetStations())
-        {
-            if (!TryComp<StationDataComponent>(stationUid, out var stationData))
-                continue;
-
-            foreach (var gridUid in stationData.Grids)
-            {
-                if (!TryComp<MapGridComponent>(gridUid, out var grid))
-                    continue;
-
-                var gridXform = Transform(gridUid);
-                if (gridXform.MapID != userMap)
-                    continue;
-
-                var worldBounds = _transform.GetWorldMatrix(gridXform).TransformBox(grid.LocalAABB);
-
-                if (worldBounds.Contains(userPosition))
-                    return false;
-
-                var nearestX = Math.Clamp(userPosition.X, worldBounds.Left, worldBounds.Right);
-                var nearestY = Math.Clamp(userPosition.Y, worldBounds.Bottom, worldBounds.Top);
-                var dx = userPosition.X - nearestX;
-                var dy = userPosition.Y - nearestY;
-
-                if (dx * dx + dy * dy <= Math.Pow(minimumDistance, 2))
-                    return false;
-            }
-        }
-
-        return true;
     }
 }

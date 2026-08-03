@@ -2,14 +2,11 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
-using Content.Shared.Objectives.Components;
 using Content.Server.Popups;
 using Content.Server.Roles;
 using Content.Shared.Roles.Components;
 using Content.Server.Objectives;
 using Content.Server.Station.Systems;
-using Content.Shared.Station.Components;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server.Ninja.Systems;
 

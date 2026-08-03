@@ -15,7 +15,7 @@
   description: Channels suit power into creating a throwing star laced with a sleeping agent. #funky change
   components:
   - type: Action
-    useDelay: 9 # funky change from 0.5
+    useDelay: 5 # funky change from 0.5
     icon:
       sprite: Objects/Weapons/Throwable/throwing_star.rsi
       state: icon

@@ -146,6 +146,11 @@ public sealed partial class NinjaSuitSystem : SharedNinjaSuitSystem
         args.Handled = true;
 
         var spider = ninja.SpiderCharge.Value;
+        if (TerminatingOrDeleted(spider))
+        {
+            Popup.PopupEntity(Loc.GetString("ninja-spider-exploded"), user, user);
+            return;
+        }
         var coords = _transform.GetWorldPosition(spider);
         var distance = (_transform.GetWorldPosition(user) - coords).Length();
         var chargeNeeded = distance * comp.RecallCharge;

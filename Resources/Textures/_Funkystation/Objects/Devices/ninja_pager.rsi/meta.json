@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Original handheld radio taken from cev-eris and modified by Swept at https://github.com/discordia-space/CEV-Eris/commit/efce5b6c3be75458ce238dcc01510e8f8a653ca6, ninja pager modifications by Miguel4387",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ninja_pager"
+    },
+    {
+      "name": "ninja_pager-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "ninja_pager-inhand-left",
+      "directions": 4
+    }
+  ]
+}

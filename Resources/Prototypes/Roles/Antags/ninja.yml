@@ -66,6 +66,7 @@
     - Flare
     - FoodSnackNutribrick
     - DrinkWaterBottleFull
+    - NinjaPager # funky
 
 - type: chameleonOutfit
   id: NinjaChameleonOutfit

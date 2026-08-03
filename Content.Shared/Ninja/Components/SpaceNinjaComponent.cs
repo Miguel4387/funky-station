@@ -56,6 +56,13 @@ public sealed partial class SpaceNinjaComponent : Component
     [DataField]
     public EntProtoId SpiderChargeObjective = "SpiderChargeObjective";
 
+    // funky
+    /// <summary>
+    /// Objective to complete after the ninja extracts.
+    /// </summary>
+    [DataField]
+    public EntProtoId SurviveObjective = "NinjaSurviveObjective";
+
     /// <summary>
     /// Alert to show for suit power.
     /// </summary>

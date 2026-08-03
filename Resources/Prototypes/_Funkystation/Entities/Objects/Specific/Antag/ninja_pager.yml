@@ -1,0 +1,14 @@
+- type: entity
+  parent: [BaseItem, BaseHighlyIllegalContraband]
+  id: NinjaPager
+  name: spider clan pager
+  description: A pager that can be used to call in an extraction ship once you've achieved your objectives. Must be used in deep space.
+  components:
+    - type: Item
+      size: Small
+      sprite: _Funkystation/Objects/Devices/ninja_pager.rsi
+      heldPrefix: ninja_pager
+    - type: Sprite
+      sprite: _Funkystation/Objects/Devices/ninja_pager.rsi
+      state: ninja_pager
+    - type: NinjaPager

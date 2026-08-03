@@ -14,12 +14,12 @@
   - type: SpiderCharge
   - type: TriggerOnStuck
   - type: TimerTrigger
-    delay: 120 # funky change from 10
-    delayOptions: [120, 180, 240] # funky change from [5, 10, 30, 60]
+    delay: 90 # funky change from 10
+    delayOptions: [90, 120, 180, 240] # funky change from [5, 10, 30, 60]
     initialBeepDelay: 30 # funky change from 0
     beepSound: /Audio/Machines/Nuke/general_beep.ogg
   - type: Sticky
-    stickDelay: 5
+    stickDelay: 3
     unstickDelay: 6 #funky
     stickPopupStart: comp-sticky-start-stick-bomb
     stickPopupSuccess: comp-sticky-success-stick-bomb
@@ -34,7 +34,7 @@
       - Window
   - type: Explosive # Powerful explosion in a large radius. Will break underplating.
     explosionType: DemolitionCharge
-    totalIntensity: 1500 # funky change from 360
+    totalIntensity: 1000 # funky change from 360
     intensitySlope: 10
     maxIntensity: 400 # funky change from 120
     canCreateVacuum: true

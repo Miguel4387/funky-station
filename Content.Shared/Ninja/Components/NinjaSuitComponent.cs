@@ -32,6 +32,7 @@ public sealed partial class NinjaSuitComponent : Component
     [DataField]
     public EntProtoId RecallKatanaAction = "ActionRecallKatana";
 
+    // funky
     /// <summary>
     /// The action id for recalling a bound spider charge
     /// </summary>

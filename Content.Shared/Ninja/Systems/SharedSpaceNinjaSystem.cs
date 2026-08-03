@@ -67,6 +67,7 @@ public abstract partial class SharedSpaceNinjaSystem : EntitySystem
         Dirty(ent, ent.Comp);
     }
 
+    // funky
     /// <summary>
     /// Bind a spider charge entity to a ninja, letting it be recalled.
     /// Does nothing if the player is not a ninja or already has a spider charge bound.

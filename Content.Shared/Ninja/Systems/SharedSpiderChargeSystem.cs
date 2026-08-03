@@ -1,5 +1,5 @@
-using Content.Shared.Inventory.Events;
-using Content.Shared.Ninja.Components;
+using Content.Shared.Inventory.Events; //funky
+using Content.Shared.Ninja.Components; //funky
 
 namespace Content.Shared.Ninja.Systems;
 

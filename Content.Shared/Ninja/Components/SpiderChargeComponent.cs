@@ -8,7 +8,7 @@ namespace Content.Shared.Ninja.Components;
 /// Only this component detonating can trigger the ninja's objective.
 /// </summary>
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSpiderChargeSystem))]
-[AutoGenerateComponentState]
+[AutoGenerateComponentState] // funky
 public sealed partial class SpiderChargeComponent : Component
 {
     /// <summary>

@@ -19,7 +19,7 @@
     initialBeepDelay: 30 # funky change from 0
     beepSound: /Audio/Machines/Nuke/general_beep.ogg
   - type: Sticky
-    stickDelay: 3
+    stickDelay: 3 # funky change from 5
     unstickDelay: 6 #funky
     stickPopupStart: comp-sticky-start-stick-bomb
     stickPopupSuccess: comp-sticky-success-stick-bomb

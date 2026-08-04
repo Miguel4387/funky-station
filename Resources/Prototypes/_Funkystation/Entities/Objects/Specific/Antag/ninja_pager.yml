@@ -5,10 +5,21 @@
   description: A pager that can be used to call in an extraction ship once you've achieved your objectives. Must be used in deep space.
   components:
     - type: Item
-      size: Small
+      size: Tiny
       sprite: _Funkystation/Objects/Devices/ninja_pager.rsi
-      heldPrefix: ninja_pager
+      inhandVisuals:
+        left:
+        - state: inhand-left
+        - state: inhand-left-unshaded
+          shader: unshaded
+        right:
+        - state: inhand-right
+        - state: inhand-right-unshaded
+          shader: unshaded
     - type: Sprite
       sprite: _Funkystation/Objects/Devices/ninja_pager.rsi
-      state: ninja_pager
+      layers:
+        - state: icon
+        - state: icon-unshaded
+          shader: unshaded
     - type: NinjaPager

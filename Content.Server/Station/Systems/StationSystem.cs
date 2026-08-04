@@ -292,7 +292,7 @@ public sealed partial class StationSystem : SharedStationSystem
         var userXform = Transform(user);
         var userPosition = _transform.GetWorldPosition(userXform);
         var userMap = userXform.MapID;
-        var result = 0f;
+        var minDistance = float.MaxValue;
 
         foreach (var stationUid in GetStations())
         {
@@ -311,17 +311,19 @@ public sealed partial class StationSystem : SharedStationSystem
                 var worldBounds = _transform.GetWorldMatrix(gridXform).TransformBox(grid.LocalAABB);
 
                 if (worldBounds.Contains(userPosition))
-                    return result;
+                    return 0f;
 
                 var nearestX = Math.Clamp(userPosition.X, worldBounds.Left, worldBounds.Right);
                 var nearestY = Math.Clamp(userPosition.Y, worldBounds.Bottom, worldBounds.Top);
                 var dx = userPosition.X - nearestX;
                 var dy = userPosition.Y - nearestY;
 
-                result = MathF.Sqrt(dx * dx + dy * dy);
+                var distance = MathF.Sqrt(dx * dx + dy * dy);
+                if (distance < minDistance)
+                    minDistance = distance;
             }
         }
-        return result;
+        return minDistance == float.MaxValue ? 0f : minDistance;
     }
 
     /// <summary>

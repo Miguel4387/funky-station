@@ -927,11 +927,12 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
 
             // Push the recognizable reagents
 
+            // funky, commented all this out
             // Sort the reagents by amount, descending then alphabetically
-            var sortedReagentPrototypes = solution.GetReagentPrototypes(PrototypeManager)
-                .OrderByDescending(pair => pair.Value.Value)
-                .ThenBy(pair => pair.Key.LocalizedName);
-
+            //var sortedReagentPrototypes = solution.GetReagentPrototypes(PrototypeManager)
+            //    .OrderByDescending(pair => pair.Value.Value)
+            //    .ThenBy(pair => pair.Key.LocalizedName);
+            //
             // Collect recognizable reagents, like water or beer
             //var recognized = new List<string>();
             //foreach (var keyValuePair in sortedReagentPrototypes)

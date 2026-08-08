@@ -39,7 +39,7 @@
   name: loadout-group-chief-medical-officer-head
   minLimit: 0
   loadouts:
-  - ChiefMedicalOfficerBeret
+#  - ChiefMedicalOfficerBeret funky - fuck non-military berets
   - CMOMedicalHeadMirror
 
 - type: loadoutGroup
@@ -116,7 +116,7 @@
   loadouts:
   - RegularLabCoat
   - MedicalDoctorWintercoat
-  - SeniorPhysicianLabCoat
+#  - SeniorPhysicianLabCoat Funky - no senior items
 
 - type: loadoutGroup
   id: MedicalDoctorPDA

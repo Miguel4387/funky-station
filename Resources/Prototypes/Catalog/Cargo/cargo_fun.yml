@@ -184,7 +184,7 @@
 - type: cargoProduct
   id: FunPirate
   icon:
-    sprite: Structures/Storage/Crates/piratechest.rsi
+    sprite: _Funkystation/Structures/Storage/Crates/piratechest.rsi # Funky
     state: crate_icon
   product: CrateFunPirate
   cost: 400
@@ -194,7 +194,7 @@
 - type: cargoProduct
   id: FunToyBox
   icon:
-    sprite: Structures/Storage/Crates/toybox.rsi
+    sprite: _Funkystation/Structures/Storage/Crates/toybox.rsi # Funky
     state: crate_icon
   product: CrateFunToyBox
   cost: 900

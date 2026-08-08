@@ -47,11 +47,12 @@ public sealed partial class ExaminableSolutionComponent : Component
     [DataField]
     public LocId LocPhysicalQuality = "shared-solution-container-component-on-examine-main-text";
 
+    // funky, commented this out
     /// <summary>
     ///     Examine text for reagents that are obvious like water.
     /// </summary>
-    [DataField]
-    public LocId LocRecognizableReagents = "examinable-solution-has-recognizable-chemicals";
+    //[DataField]
+    //public LocId LocRecognizableReagents = "examinable-solution-has-recognizable-chemicals";
 }
 
 /// <summary>

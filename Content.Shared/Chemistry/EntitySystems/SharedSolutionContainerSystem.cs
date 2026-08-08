@@ -933,28 +933,28 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
                 .ThenBy(pair => pair.Key.LocalizedName);
 
             // Collect recognizable reagents, like water or beer
-            var recognized = new List<string>();
-            foreach (var keyValuePair in sortedReagentPrototypes)
-            {
-                var proto = keyValuePair.Key;
-                if (!proto.Recognizable)
-                {
-                    continue;
-                }
+            //var recognized = new List<string>();
+            //foreach (var keyValuePair in sortedReagentPrototypes)
+            //{
+            //    var proto = keyValuePair.Key;
+            //    if (!proto.Recognizable)
+            //    {
+            //        continue;
+            //    }
 
-                recognized.Add(Loc.GetString("examinable-solution-recognized",
-                                            ("color", proto.SubstanceColor.ToHexNoAlpha()),
-                                            ("chemical", proto.LocalizedName)));
-            }
+            //    recognized.Add(Loc.GetString("examinable-solution-recognized",
+            //                                ("color", proto.SubstanceColor.ToHexNoAlpha()),
+            //                                ("chemical", proto.LocalizedName)));
+            //}
 
-            if (recognized.Count == 0)
-                return;
+            //if (recognized.Count == 0)
+            //    return;
 
-            var msg = ContentLocalizationManager.FormatList(recognized);
+            //var msg = ContentLocalizationManager.FormatList(recognized);
 
             // Finally push the full message
-            args.PushMarkup(Loc.GetString(entity.Comp.LocRecognizableReagents,
-                ("recognizedString", msg)));
+            //args.PushMarkup(Loc.GetString(entity.Comp.LocRecognizableReagents,
+            //    ("recognizedString", msg)));
         }
     }
 

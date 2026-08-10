@@ -20,6 +20,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared._Funkystation.CCVar; // Funky
+using Robust.Shared.Configuration; // Funky
 using Dependency = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Shared.Chemistry.EntitySystems;
@@ -79,6 +81,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     [Dependency] protected EntityQuery<ContainedSolutionComponent> ContainedQuery = default!;
     [Dependency] protected EntityQuery<SolutionComponent> SolutionQuery = default!;
     [Dependency] protected EntityQuery<SolutionManagerComponent> SolutionManagerQuery = default!;
+    [Dependency] private IConfigurationManager _cfg = default!; // Funky
 
     public override void Initialize()
     {
@@ -925,37 +928,38 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
                                         ("desc", primary.LocalizedPhysicalDescription),
                                         ("chemCount", solution.Contents.Count)));
 
+            if (!_cfg.GetCVar(RecognisableReagentCVars.RecognisableReagentsEnabled)) // funky
+                return;
             // Push the recognizable reagents
 
-            // funky, commented all this out
             // Sort the reagents by amount, descending then alphabetically
-            //var sortedReagentPrototypes = solution.GetReagentPrototypes(PrototypeManager)
-            //    .OrderByDescending(pair => pair.Value.Value)
-            //    .ThenBy(pair => pair.Key.LocalizedName);
-            //
+            var sortedReagentPrototypes = solution.GetReagentPrototypes(PrototypeManager)
+                .OrderByDescending(pair => pair.Value.Value)
+                .ThenBy(pair => pair.Key.LocalizedName);
+
             // Collect recognizable reagents, like water or beer
-            //var recognized = new List<string>();
-            //foreach (var keyValuePair in sortedReagentPrototypes)
-            //{
-            //    var proto = keyValuePair.Key;
-            //    if (!proto.Recognizable)
-            //    {
-            //        continue;
-            //    }
+            var recognized = new List<string>();
+            foreach (var keyValuePair in sortedReagentPrototypes)
+            {
+                var proto = keyValuePair.Key;
+                if (!proto.Recognizable)
+                {
+                    continue;
+                }
 
-            //    recognized.Add(Loc.GetString("examinable-solution-recognized",
-            //                                ("color", proto.SubstanceColor.ToHexNoAlpha()),
-            //                                ("chemical", proto.LocalizedName)));
-            //}
+                recognized.Add(Loc.GetString("examinable-solution-recognized",
+                                            ("color", proto.SubstanceColor.ToHexNoAlpha()),
+                                            ("chemical", proto.LocalizedName)));
+            }
 
-            //if (recognized.Count == 0)
-            //    return;
+            if (recognized.Count == 0)
+                return;
 
-            //var msg = ContentLocalizationManager.FormatList(recognized);
+            var msg = ContentLocalizationManager.FormatList(recognized);
 
             // Finally push the full message
-            //args.PushMarkup(Loc.GetString(entity.Comp.LocRecognizableReagents,
-            //    ("recognizedString", msg)));
+            args.PushMarkup(Loc.GetString(entity.Comp.LocRecognizableReagents,
+                ("recognizedString", msg)));
         }
     }
 

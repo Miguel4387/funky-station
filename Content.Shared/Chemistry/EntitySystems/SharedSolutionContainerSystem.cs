@@ -932,7 +932,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             // Push the recognizable reagents
 
             // Sort the reagents by amount, descending then alphabetically
-            var sortedReagentPrototypes = solution.GetReagentPrototypes(PrototypeManager)
+            var sortedReagentPrototypes = solution.GetReagentPrototypes(ProtoMan)
                 .OrderByDescending(pair => pair.Value.Value)
                 .ThenBy(pair => pair.Key.LocalizedName);
 

@@ -201,7 +201,7 @@ ui-options-function-open-character-menu = Open character menu
 ui-options-function-open-context-menu = Open context menu
 ui-options-function-open-crafting-menu = Open crafting menu
 ui-options-function-open-inventory-menu = Open inventory
-ui-options-function-open-a-help = Open admin help
+ui-options-function-open-a-help = Open admin and mentor help
 ui-options-function-open-abilities-menu = Open action menu
 ui-options-function-open-emotes-menu = Open emotes menu
 ui-options-function-toggle-round-end-summary-window = Toggle round end summary window
@@ -369,6 +369,8 @@ ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-disable-ai-static = Disable the static effect on the AI camera overlay
 ui-options-screen-shake-intensity = Screen shake intensity
+# Funky, ES pain flash
+ui-options-es-pain-flash-intensity = Pain flash intensity
 
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-speech-bubble-text-opacity = Speech bubble text opacity

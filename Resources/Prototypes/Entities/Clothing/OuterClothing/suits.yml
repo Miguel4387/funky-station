@@ -174,7 +174,7 @@
   - type: ComponentToggler
     parent: true
     components:
-    # Goobstation - Proper invisibility
+    # <Goobstation> - Proper invisibility
     - type: Stealth
       maxVisibility: 0.1
       hadOutline: true
@@ -183,6 +183,7 @@
       maxInvisibilityPenalty: 1.6
       passiveVisibilityRate: -0.75 # cloak very fast
       movementVisibilityRate: 0.15 # only some cloak if moving
+    # </Goobstation>
   - type: PowerCellDraw
     drawRate: 1.8 # 200 seconds on the default cell
   - type: ToggleCellDraw

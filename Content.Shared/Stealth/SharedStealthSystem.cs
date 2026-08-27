@@ -107,7 +107,7 @@ public abstract partial class SharedStealthSystem : EntitySystem
         ModifyVisibility(uid, delta);
     }
 
-    // Goobstation - Proper invisibility
+    //<goobstation>
     private void OnGetVisibilityModifiers(EntityUid uid, StealthOnMoveComponent component, GetVisibilityModifiersEvent args)
     {
         var limit = args.Stealth.MinVisibility;
@@ -117,6 +117,7 @@ public abstract partial class SharedStealthSystem : EntitySystem
         if (args.Stealth.LastVisibility > limit)
             args.FlatModifier += args.SecondsSinceUpdate * component.PassiveVisibilityRate;
     }
+    //</goobstation>
 
     /// <summary>
     /// Modifies the visibility based on the delta provided.

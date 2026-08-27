@@ -51,10 +51,10 @@
   name: Recover Spider Charge
   description: Teleports the Spider Charge linked to this suit to its wearer in case its lost, cost based on distance.
   components:
-  - type: Action
-    icon:
-      sprite: Objects/Weapons/Bombs/spidercharge.rsi
-      state: icon
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/spidercharge.rsi
+    layers:
+    - state: icon
   - type: InstantAction
     event: !type:RecallSpiderChargeEvent {}
 

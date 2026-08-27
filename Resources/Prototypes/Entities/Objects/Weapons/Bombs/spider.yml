@@ -36,8 +36,8 @@
   - type: Explosive # Powerful explosion in a large radius. Will break underplating.
     explosionType: DemolitionCharge
     totalIntensity: 600 # funky change from 360
-    intensitySlope: 10
-    maxIntensity: 200 # funky change from 120
+    intensitySlope: 15 # funky change from 10
+    maxIntensity: 400 # funky change from 120
     canCreateVacuum: true
   - type: ExplodeOnTrigger
     keysIn:

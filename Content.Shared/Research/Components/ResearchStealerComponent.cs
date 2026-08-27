@@ -3,6 +3,7 @@ using Robust.Shared.GameStates;
 ///<funky change>
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Radio;
+using Robust.Shared.Prototypes;
 //</funky change>
 
 namespace Content.Shared.Research.Components;
@@ -35,7 +36,7 @@ public sealed partial class ResearchStealerComponent : Component
     /// The radio channel for science
     /// </summary>
     /// funky
-    [DataField("scienceChannel", customTypeSerializer: typeof(PrototypeIdSerializer<RadioChannelPrototype>))]
+    [DataField("scienceChannel", customTypeSerializer: typeof(ProtoId<RadioChannelPrototype>))]
     public string ScienceChannel = "Science";
 
     /// <summary>

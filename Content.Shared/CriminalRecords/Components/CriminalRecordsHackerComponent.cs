@@ -37,7 +37,7 @@ public sealed partial class CriminalRecordsHackerComponent : Component
     /// The radio channel for security
     /// </summary>
     /// funky change for Ninja warning
-    [DataField("securityChannel", customTypeSerializer: typeof(PrototypeIdSerializer<RadioChannelPrototype>))]
+    [DataField("securityChannel", customTypeSerializer: typeof(ProtoId<RadioChannelPrototype>))]
 
     public string SecurityChannel = "Security";
     /// <summary>

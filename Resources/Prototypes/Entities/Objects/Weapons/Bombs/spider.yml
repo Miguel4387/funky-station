@@ -29,8 +29,9 @@
     # unsticking defuses the bomb
     canUnstick: true # funky change from false
     whitelist:
-      tags:
+      components:
       - Wall
+      tags:
       - Window
   - type: Explosive # Powerful explosion in a large radius. Will break underplating.
     explosionType: DemolitionCharge

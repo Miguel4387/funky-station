@@ -16,9 +16,6 @@
   components:
   - type: Action
     useDelay: 5 # funky change from 0.5
-    icon:
-      sprite: Objects/Weapons/Throwable/throwing_star.rsi
-      state: icon
     itemIconStyle: NoItem
     priority: -10
   - type: Sprite

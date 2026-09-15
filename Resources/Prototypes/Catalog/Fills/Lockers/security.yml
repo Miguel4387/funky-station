@@ -46,6 +46,7 @@
     - id: Binoculars
     - id: PlushieLizardJobWarden
       prob: 0.02
+    - id: ClothingHeadsetWarden #funkystation
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -162,7 +163,7 @@
     - id: FlippoEngravedLighter
     - id: FlashlightSeclite
     - id: ForensicScanner
-    - id: LogProbeCartridge
+    - id: HandheldLogProbe # funky, replaces LogProbeCartridge
     - id: BoxForensicPad
     - id: DrinkDetFlask
     - id: ClothingHandsGlovesForensic
